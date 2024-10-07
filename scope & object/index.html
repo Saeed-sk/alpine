@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <title>alpine-tabs</title>
+</head>
+<body class="bg-dark">
+<section class="container d-flex w-100 gap-3 m-5 mx-auto">
+    <div class="mx-auto bg-secondary text-white px-5 py-4 w-100" x-data="{ bodyObj: 'a variable from the body one'}">
+        <div x-data="{ divObj: 'a variable from the body two'}">
+            bodyVar : <span class="text-warning" x-text="bodyObj"></span>
+            <br>
+            divVar: <span class="text-black" x-text="divObj"></span>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

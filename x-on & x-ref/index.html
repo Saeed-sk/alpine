@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>alpine-tabs</title>
+</head>
+<body class="bg-dark text-white">
+<section class="container mx-auto p-5" x-data="{myInput:''}">
+    <input class="form-control" x-model="myInput" type="text">
+    <div class="d-flex flex-column w-100 justify-content-between">
+        <span x-text="myInput"></span>
+        <button @click="myInput=''" class="btn btn-primary">Reset</button>
+    </div>
+</section>
+
+<section class="container mx-auto p-5" x-data="{myInput:'' ,remainingChars: 10}">
+    <input x-ref="username" @keyup="remainingChars = 10 - $refs.username.value.length" class="form-control"
+           maxlength="10" x-model="myInput" type="text">
+    <div class="d-flex flex-column w-100 justify-content-between">
+        <span x-text="remainingChars + ' characters remaining'"></span>
+        <button @click="myInput=''" class="btn btn-primary">submit</button>
+    </div>
+</section>
+
+
+<section class="container mx-auto p-5" x-data>
+    <div @click="console.log('click')" class="w-100 bg-danger p-3 rounded">
+        <button @click.stop class="btn btn-dark" >
+            click
+        </button>
+    </div>
+</section>
+</body>
+</html>

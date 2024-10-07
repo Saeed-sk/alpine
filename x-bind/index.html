@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <title>alpine-tabs</title>
+</head>
+<body class="bg-dark">
+<div>
+    <label class="text-white ps-1" for="text">Value</label>
+    <input id="text" name="text" class="form-control" type="text" x-data="{
+                 newValue: 'some value',
+                 isDisable: false
+                 }"
+           x-bind:value="newValue"
+           :disabled="isDisable">
+    <br>
+    <span x-data="{myClass: 'color:red'}" :class="myClass + ' bg-black p-3'">some text</span>
+</div>
+
+
+</body>
+</html>
