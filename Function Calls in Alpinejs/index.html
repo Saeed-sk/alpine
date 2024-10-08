@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>alpine-tabs</title>
+</head>
+<body class="bg-dark text-white">
+<!--<section class="container mx-auto p-5 w-100" x-data="myComponent">-->
+<!--    <h3 class="mx-auto text-center"> simple alert call with @click</h3>-->
+<!--    <button class="btn btn-primary" @click="alertFn">-->
+<!--        Click me-->
+<!--    </button>-->
+<!--</section>-->
+
+<section class="container mx-auto p-5 w-100 d-flex flex-column gap-2" x-data="myComponent('saeed')">
+    <input id="myName" name="myName" class="form-control" type="text" x-model="myName"/>
+    <button class="btn btn-primary" @click="sayMyName()">
+        Click me
+    </button>
+</section>
+<script src="app.js"></script>
+
+</body>
+</html>

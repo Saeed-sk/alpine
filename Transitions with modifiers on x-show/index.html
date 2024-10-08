@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>alpine-tabs</title>
+</head>
+<body class="bg-dark text-white">
+
+<section class="container mx-auto p-5 w-100 d-flex flex-column gap-2" x-data="{isShow: true}">
+    <button class="btn btn-primary" @click="isShow = !isShow">
+        <span x-show="!isShow">Show</span>
+        <span x-show="isShow">Hide</span>
+    </button>
+    <div x-show="isShow"
+         x-cloak
+         x-transition.scale.0.origin.top.left
+         class="p-5 rounded bg-secondary align-self-center mt-5">
+    </div>
+</section>
+<script src="app.js"></script>
+
+</body>
+</html>
