@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator with alpine</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./app.js"></script>
+</head>
+<body class="bg-dark">
+<section class="container w-50 mx-auto text-white my-5 border rounded p-3" x-data="numbersCmp()">
+    <div class="row-cols-3 monitor rounded w-100 border border-black border-4 p-3">
+        <span x-show="calculated" x-text="result"></span>
+        <span x-show="action !== ''" x-text="action"></span>
+        <span x-show="selectedNum !== 0 || !calculated" x-text="selectedNum"></span>
+    </div>
+    <div class="row w-100 mx-auto my-2 justify-content-center gap-1">
+        <div class="col-8 row gap-1 justify-content-center">
+            <template x-for="num in numbers">
+                <button @click="changeNum(num)" class="col-3 btn btn-secondary" x-text="num"></button>
+            </template>
+        </div>
+        <div class="col row gap-1">
+            <template x-for="op in actions">
+                <button @click="changeAction(op)" :class="op===action ? 'col-12 btn btn-success' : 'col-12 btn btn-primary'" x-text="op"></button>
+            </template>
+        </div>
+        <div class="col row row-cols-1 gap-1">
+
+            <button @click="reset()" class="btn btn-danger col-12">reset</button>
+            <button @click="stepBack()" class="btn btn-danger col-12"> <- </button>
+            <button @click="calculate()" class="btn btn-success col-12">=</button>
+        </div>
+    </div>
+</section>
+</body>
+</html>

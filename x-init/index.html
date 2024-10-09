@@ -8,11 +8,10 @@
     <title>alpine-tabs</title>
 </head>
 <body class="bg-dark text-white">
-<section class="container mx-auto p-5" x-data="{isShow: true}">
-    <button class="btn btn-secondary" @click="isShow = !isShow" x-text="isShow ? 'Hide' : 'Show'"></button>
-    <template x-if="isShow">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, quia!</p>
+<div x-data="{ users: [] }" x-init="fetch('/api/users').then(response => response.json()).then(data => users = data)">
+    <template x-for="user in users" :key="user.id">
+        <p x-text="user.name"></p>
     </template>
-</section>
+</div>
 </body>
 </html>
